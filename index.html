@@ -3,33 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nova - Your Ultimate Gaming Destination</title>
+    <title>Nova - Your Cosmic Gaming Destination</title>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&family=Wix+Madefor+Display&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Wix Madefor Display', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1b2838;
-            color: #c7d5e0;
+            background-color: #050d25;
+            color: #e0e7ff;
+            background-image: url('https://via.placeholder.com/1920x1080?text=Space+Background');
+            background-size: cover;
+            background-attachment: fixed;
         }
         header {
-            background-color: #171a21;
+            background-color: rgba(5, 13, 37, 0.8);
             padding: 20px;
             text-align: center;
         }
-        h1 {
+        h1, h2, h3 {
+            font-family: 'Public Sans', sans-serif;
+            letter-spacing: -0.125em;
             margin: 0;
-            color: #66c0f4;
+            color: #ff6b6b;
+            text-shadow: 0 0 10px #ff6b6b;
         }
         nav {
-            background-color: #2a475e;
+            background-color: rgba(42, 71, 94, 0.8);
             padding: 10px;
             text-align: center;
         }
         nav a {
-            color: #c7d5e0;
+            color: #e0e7ff;
             text-decoration: none;
             margin: 0 10px;
+            font-family: 'Public Sans', sans-serif;
+            letter-spacing: -0.125em;
         }
         main {
             max-width: 1200px;
@@ -42,20 +51,39 @@
             flex-wrap: wrap;
         }
         .game-card {
-            background-color: #2a475e;
-            border-radius: 5px;
-            padding: 10px;
+            background-color: rgba(42, 71, 94, 0.8);
+            border-radius: 10px;
+            padding: 20px;
             margin-bottom: 20px;
             width: calc(33% - 20px);
             box-sizing: border-box;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
         }
         .game-card img {
             width: 100%;
             height: auto;
             border-radius: 5px;
         }
+        .game-card button {
+            background-color: #ff6b6b;
+            color: #050d25;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Public Sans', sans-serif;
+            letter-spacing: -0.125em;
+            transition: background-color 0.3s ease;
+        }
+        .game-card button:hover {
+            background-color: #ff8e8e;
+        }
         footer {
-            background-color: #171a21;
+            background-color: rgba(5, 13, 37, 0.8);
             text-align: center;
             padding: 10px;
             position: fixed;
@@ -67,28 +95,28 @@
 <body>
     <header>
         <h1>Nova</h1>
-        <p>Your Ultimate Gaming Destination</p>
+        <p>Your Cosmic Gaming Destination</p>
     </header>
     <nav>
-        <a href="#" id="storeLink">Store</a>
-        <a href="#" id="libraryLink">Library</a>
-        <a href="#" id="communityLink">Community</a>
-        <a href="#" id="supportLink">Support</a>
+        <a href="#" id="storeLink">Nebula Store</a>
+        <a href="#" id="libraryLink">Stellar Library</a>
+        <a href="#" id="communityLink">Cosmic Community</a>
+        <a href="#" id="supportLink">Galactic Support</a>
     </nav>
     <main>
-        <h2>Featured Games</h2>
+        <h2>Featured Cosmic Adventures</h2>
         <div class="featured-games" id="featuredGames">
             <!-- Game cards will be dynamically added here -->
         </div>
     </main>
     <footer>
-        <p>&copy; 2024 Nova by xxavv6AMES. All rights reserved.</p>
+        <p>&copy; 2024 Nova by xxavv6AMES. All rights reserved across the universe.</p>
     </footer>
 
     <script>
         const games = [
-            { title: "Cosmic Explorers", image: "https://via.placeholder.com/300x200?text=Cosmic+Explorers" },
-            { title: "Neon Racers", image: "https://via.placeholder.com/300x200?text=Neon+Racers" },
+            { title: "Stellar Explorers", image: "https://via.placeholder.com/300x200?text=Stellar+Explorers" },
+            { title: "Nebula Racers", image: "https://via.placeholder.com/300x200?text=Nebula+Racers" },
             { title: "Quantum Siege", image: "https://via.placeholder.com/300x200?text=Quantum+Siege" }
         ];
 
@@ -100,7 +128,7 @@
             gameCard.innerHTML = `
                 <img src="${game.image}" alt="${game.title}">
                 <h3>${game.title}</h3>
-                <button onclick="alert('Game added to cart!')">Add to Cart</button>
+                <button onclick="alert('Game added to your cosmic collection!')">Add to Collection</button>
             `;
             featuredGames.appendChild(gameCard);
         });
@@ -108,7 +136,7 @@
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                alert(`Navigating to ${e.target.textContent} page`);
+                alert(`Warping to ${e.target.textContent} sector`);
             });
         });
     </script>
