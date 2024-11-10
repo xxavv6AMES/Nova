@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova - Your Ultimate Gaming Destination</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1b2838;
+            color: #c7d5e0;
+        }
+        header {
+            background-color: #171a21;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            color: #66c0f4;
+        }
+        nav {
+            background-color: #2a475e;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #c7d5e0;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .featured-games {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .game-card {
+            background-color: #2a475e;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+            width: calc(33% - 20px);
+            box-sizing: border-box;
+        }
+        .game-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #171a21;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nova</h1>
+        <p>Your Ultimate Gaming Destination</p>
+    </header>
+    <nav>
+        <a href="#" id="storeLink">Store</a>
+        <a href="#" id="libraryLink">Library</a>
+        <a href="#" id="communityLink">Community</a>
+        <a href="#" id="supportLink">Support</a>
+    </nav>
+    <main>
+        <h2>Featured Games</h2>
+        <div class="featured-games" id="featuredGames">
+            <!-- Game cards will be dynamically added here -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Nova by xxavv6AMES. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const games = [
+            { title: "Cosmic Explorers", image: "https://via.placeholder.com/300x200?text=Cosmic+Explorers" },
+            { title: "Neon Racers", image: "https://via.placeholder.com/300x200?text=Neon+Racers" },
+            { title: "Quantum Siege", image: "https://via.placeholder.com/300x200?text=Quantum+Siege" }
+        ];
+
+        const featuredGames = document.getElementById('featuredGames');
+
+        games.forEach(game => {
+            const gameCard = document.createElement('div');
+            gameCard.className = 'game-card';
+            gameCard.innerHTML = `
+                <img src="${game.image}" alt="${game.title}">
+                <h3>${game.title}</h3>
+                <button onclick="alert('Game added to cart!')">Add to Cart</button>
+            `;
+            featuredGames.appendChild(gameCard);
+        });
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert(`Navigating to ${e.target.textContent} page`);
+            });
+        });
+    </script>
+</body>
+</html>
